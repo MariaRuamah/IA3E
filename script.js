@@ -24,15 +24,17 @@ const perguntas = [//abre a lista da objetos (itens)
 let posicao = 0;
 let perguntaatual;
 
-function mostrapergunta(){
-  perguntaatual = perguntas[posicao];
-caixapergunta.textcontent = perguntaatual.enunciado;
-mostraAlternativas()
+function mostrapergunta() {
+    perguntaatual = perguntas[posicao];
+    caixapergunta.textContent = perguntaatual.enunciado;
+    mostraAlternativas()
 }
-function mostraAlternativas(){
-    for (const alternativa of perguntaatual.alternativa){
+
+
+function mostraAlternativas() {
+    for (const alternativa of perguntaatual.alternativas) {
         const botaoalternativas = document.createElement("button");
-        botaoalternativas.textContent = alternativas;
+        botaoalternativas.textContent = alternativa;
         caixaalternativa.appendChild(botaoalternativas);
     }
 }
