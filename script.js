@@ -5,14 +5,14 @@ const caixaresultado = document.querySelector('.caixa-resultado');
 
 const perguntas = [//abre a lista da objetos (itens)
     {//abre o item
-        enunciado: "Você gosta da Inteligência Artificial?",
+        enunciado: "Você tem uma rotina de sono saudável?",
         alternativas: [{
             texto: "Sim",
-            Afirmação: "Ela pode ajudar em muitas coisas"
+            Afirmação: "Sim, durmo cedo para conseguir completar as horas necessárias"
         },
         {
             texto: "Não",
-            Afirmação: "Ela pode ser perigosa e causar muitos danos futuramente"
+            Afirmação: "Não, fico acordado de madrugada usando o celular"
         }
         ]
     },
@@ -29,14 +29,14 @@ const perguntas = [//abre a lista da objetos (itens)
         ]
     },
     {
-        enunciado: "Você gosta de ler livros?",
+        enunciado: "Você toma água na quantidade certa?",
         alternativas: [{
             texto: "Sim",
-            Afirmação: "Amo ler livros e as histórias deles me divertem"
+            Afirmação: "Sim, tomo todos os dias mais de 2L"
         },
         {
             texto: "Não",
-            Afirmação: "É muito chato e entediante"
+            Afirmação: "Não, esqueço de tomar no dia a dia"
         }
         ]
     },
@@ -79,11 +79,13 @@ function mostraAlternativas() {
 }
 function respostasSelecionadas(opcaoSelecionada){
     const afirmacoes = opcaoSelecionada.Afirmação;
-    respostas = afirmacoes;
+    respostas += afirmacoes +" ";
     posicao++
     mostrapergunta();
 }
 function mostraResultado(){
-    caixapergunta.textContent = "Ao longo dos anos...";
+    caixapergunta.textContent = "Confira suas respostas: ";
+    textoResultado.textContent = respostas; 
+    caixaalternativa.textContent = "";
 }
 mostrapergunta();    
